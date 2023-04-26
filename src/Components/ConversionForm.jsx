@@ -77,6 +77,7 @@ export function ConversionForm({ setSavedConversions }) {
                 },
             ];
         });
+        setInputValue("");
     }
     return (
         <form className="conversion-form">
