@@ -29,6 +29,7 @@
     position: relative;
     top: 2em;
     flex-direction: column;
+    justify-content: center;
     align-content: center;
     /* align-items: center; */
     max-width: 714px;
@@ -42,8 +43,8 @@
     border-radius: 21px;
     box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.2);
     background-color: #2e0039;
-    margin-top: 10px;
-    padding: 20px;
+    margin-top: 1.5rem;
+    padding: 1rem;
 }
 
 .convert-label {
@@ -52,13 +53,25 @@
     line-height: 36px;
     color: #ffffff;
 }
-/* .conversion {
+.conversion {
     background-color: transparent;
-    border: none; 
-    border-bottom: white;
-    border-color: white; 
     color: white;
-} */
+    border: none;
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: white;
+    outline: none;
+    padding: 0.5rem;
+    font-size: 14px;
+}
+
+.conversion:hover {
+    cursor: pointer;
+}
+
+option {
+    background-color: #2e0039;
+}
 
 .input {
     background-color: transparent;
@@ -69,17 +82,27 @@
     border-bottom-color: white;
     outline: none;
     text-align: right;
-    padding: 10px;
+    padding: 0.5rem;
+    font-size: 14px;
+}
+
+.input-unit {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
 }
 
 .reverse-icon {
     background-color: transparent;
     border-style: none;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
 }
 
 .new-conversion-form {
     display: grid;
-    grid-template-columns: 3fr 1fr 3fr;
+    grid-template-columns: 5fr 1fr 5fr 1fr;
     justify-content: space-between;
 }
 
@@ -99,7 +122,7 @@
 
 .result {
     position: absolute;
-    right: 20px;
+    right: 30px;
     margin-top: 10px;
 }
 
@@ -114,9 +137,13 @@
     grid-template-columns: 6fr 6fr;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 425px) {
     .saved-conversions {
         grid-template-columns: 1fr;
+    }
+    .new-conversion-form {
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 }
 
@@ -135,8 +162,9 @@
     position: absolute;
     background-color: transparent;
     border-style: none;
-    align-content: center;
+    top: 0%;
     right: 1.5rem;
+    font-size: 20px;
 }
 
 .delete-btn:hover {

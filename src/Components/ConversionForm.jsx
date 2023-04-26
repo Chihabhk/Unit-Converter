@@ -106,6 +106,7 @@ export function ConversionForm({ setSavedConversions }) {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                 />
+                <span className="input-unit">{inputUnit}</span>
             </div>
             <button className="fav-btn" onClick={(e) => addFav(e)}>
                 <span className="material-symbols-outlined">favorite</span>
