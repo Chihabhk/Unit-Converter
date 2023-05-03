@@ -1,5 +1,6 @@
 export function SavedConversions({ setSavedConversions, savedConversions }) {
-    function hundleDelete(id) {
+    
+    function handleDelete(id) {
         setSavedConversions((savedConversions) => {
             return savedConversions.filter(
                 (conversion) => conversion.id !== id
@@ -21,11 +22,10 @@ export function SavedConversions({ setSavedConversions, savedConversions }) {
                             <button
                                 className="delete-btn"
                                 onClick={() =>
-                                    hundleDelete(savedConversion.id)
+                                    handleDelete(savedConversion.id)
                                 }>
-                                x
+                                ✗
                             </button>
-                            <br />
                         </span>
                     );
                 })}

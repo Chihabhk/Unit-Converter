@@ -15,7 +15,10 @@ export function ConversionForm({ setSavedConversions }) {
 
     const result = parseFloat(inputValue * conversion).toFixed(2);
 
-    useEffect(() => handleUnits(), [conversion]); //todo: guess what dependency is missing and fix it
+    useEffect(() => 
+        handleUnits()
+    , [conversion]); //todo: guess what dependency is missing and fix it
+    
     function handleUnits() {
         switch (parseFloat(conversion)) {
             case kmMl:
@@ -53,18 +56,20 @@ export function ConversionForm({ setSavedConversions }) {
                 break;
         }
     }
+    
     function handleReverse(e) {
         e.preventDefault();
         setConversion(1 / conversion);
         if (
             inputValue &&
-            setInputValue(parseFloat(inputValue * conversion).toFixed(2))
+            setInputValue(result)
         );
     }
+    
     function addFav(e) {
         e.preventDefault();
         if (!inputValue) return;
-        if (isNaN(inputValue)) return alert("Alert: Input has to be a number");
+        if (isNaN(inputValue)) return (alert("Alert: Input has to be a number"), setInputValue(""))
         setSavedConversions((savedConversions) => {
             return [
                 ...savedConversions,
@@ -79,6 +84,7 @@ export function ConversionForm({ setSavedConversions }) {
         });
         setInputValue("");
     }
+
     return (
         <form className="conversion-form">
             <label className="convert-label">Convert</label>
